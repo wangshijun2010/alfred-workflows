@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.meituan.wangshijun.supersuggest</string>
+	<key>connections</key>
+	<dict>
+		<key>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2558AB62-161A-453C-BB59-40619C85E8DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4B45080B-A891-42BB-815F-4ECEFA99B859</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>769951D2-209E-4EF1-8665-6025558F8EDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BCC41292-4B26-4C89-A63B-FB47EB21F0D8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C7A207E9-8479-4D05-BA61-25125F486108</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DEF530A1-7787-47C3-8E18-0123C9550184</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>wangshijun2010</string>
+	<key>description</key>
+	<string>Get Search Suggest from 知乎，淘宝，京东，百度地图</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Super Suggest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugmap</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php baidu_map.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 百度地图 with Suggestions</string>
+				<key>title</key>
+				<string>Search 百度地图</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugtb</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php taobao.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 淘宝 with Suggestions</string>
+				<key>title</key>
+				<string>Search 淘宝</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4B45080B-A891-42BB-815F-4ECEFA99B859</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>suggg</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php google.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Google with Suggestions</string>
+				<key>title</key>
+				<string>Search Google</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open "$(echo '{query}' | cut -d '|' -f 1 )"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugjd</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php jingdong.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 京东商城 with Suggestions</string>
+				<key>title</key>
+				<string>Search 京东商城</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>769951D2-209E-4EF1-8665-6025558F8EDE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugamz</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php amazon.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Amazon with Suggestions</string>
+				<key>title</key>
+				<string>Search Amazon</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2558AB62-161A-453C-BB59-40619C85E8DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugzh</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php zhihu.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 知乎 with Suggestions</string>
+				<key>title</key>
+				<string>Search 知乎</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BCC41292-4B26-4C89-A63B-FB47EB21F0D8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugbd</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php baidu_web.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 百度 with Suggestions</string>
+				<key>title</key>
+				<string>Search 百度</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C7A207E9-8479-4D05-BA61-25125F486108</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugwiki</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php wikipedia.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Wikipedia with Suggestions</string>
+				<key>title</key>
+				<string>Search Wikipedia</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DEF530A1-7787-47C3-8E18-0123C9550184</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</key>
+		<dict>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>2558AB62-161A-453C-BB59-40619C85E8DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>650</real>
+		</dict>
+		<key>4B45080B-A891-42BB-815F-4ECEFA99B859</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>56AC1B07-592D-4D51-BB77-99CC54195570</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>769951D2-209E-4EF1-8665-6025558F8EDE</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>BCC41292-4B26-4C89-A63B-FB47EB21F0D8</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>C7A207E9-8479-4D05-BA61-25125F486108</key>
+		<dict>
+			<key>ypos</key>
+			<real>900</real>
+		</dict>
+		<key>DEF530A1-7787-47C3-8E18-0123C9550184</key>
+		<dict>
+			<key>ypos</key>
+			<real>780</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>wangshijun2010@gmail.com</string>
+</dict>
+</plist>
