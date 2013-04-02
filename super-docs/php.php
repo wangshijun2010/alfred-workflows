@@ -40,10 +40,16 @@ if (!file_exists($dataFile)) {
             $title = pq($link)->text();
             $subtitle = pq($item)->text();
             $subtitle = trim(str_replace($title, '', $subtitle), '- ');
-            $data[] = compact('url', 'title', 'subtitle');
+            $type = 'function';
+            if (strpos($title, '::')) {
+                $type = 'method';
+            }
+            $data[] = compact('url', 'title', 'subtitle', 'type');
         }
     }
+
     file_put_contents($dataFile, sprintf("<?php\n return %s;", var_export($data, true)));
+    // echo 'Get ', count($data), ' items', PHP_EOL;
 }
 
 // search for user query
@@ -55,14 +61,16 @@ $query = trim($argv[1]);
 foreach ($items as $item) {
     extract($item);
     if (stripos($title, $query) !== false) {
+        $icon = sprintf('./icons/%s.png', $type);
         $wf->result("$url", "$title", "$subtitle", $icon);
     }
 }
 
-// $results = $wf->results();
-// if (count($results) == 0) {
-//     $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 知乎 for '.$query, 'icon.png');
-// }
+$results = $wf->results();
+if (count($results) == 0) {
+    $searchUrl = sprintf('http://www.php.net/manual-lookup.php?pattern=%s&lang=en&scope=quickref', urlencode($query));
+    $wf->result($searchUrl, 'No Suggestions', 'No search suggestions found. Search for ' . $query, 'icon.png');
+}
 
 echo $wf->toxml();
 

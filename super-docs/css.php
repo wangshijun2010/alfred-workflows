@@ -96,10 +96,11 @@ foreach ($items as $item) {
     }
 }
 
-// $results = $wf->results();
-// if (count($results) == 0) {
-//     $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 知乎 for '.$query, 'icon.png');
-// }
+$results = $wf->results();
+if (count($results) == 0) {
+    $searchUrl = sprintf('https://developer.mozilla.org/en-US/search?q=%s', urlencode($query));
+    $wf->result($searchUrl, 'No Suggestions', 'No search suggestions found. Search for ' . $query, 'icon.png');
+}
 
 echo $wf->toxml();
 
