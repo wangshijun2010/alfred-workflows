@@ -54,7 +54,7 @@ $query = trim($argv[1]);
 
 foreach ($items as $item) {
     extract($item);
-    if (strpos($title, $query) !== false) {
+    if (stripos($title, $query) !== false) {
         $wf->result("$url", "$title", "$subtitle", $icon);
     }
 }

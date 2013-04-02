@@ -33,14 +33,54 @@ if (!file_exists($dataFile)) {
     echo 'Parse data file', PHP_EOL;
     $data = array();
     phpQuery::newDocumentFile($rawDataFile);
-    $items = pq('article.post');
-    foreach ($items as $item) {
-        $link = pq($item)->find('.entry-title a');
-        $url = pq($link)->attr('href');
-        $title = pq($link)->text();
-        $subtitle = trim(pq($item)->find('.entry-summary')->text());
-        $data[] = compact('url', 'title', 'subtitle');
+
+    // css properties
+    echo 'Parse css properties', PHP_EOL;
+    $items = pq('div.index')->find('a');
+    foreach ($items as $prop) {
+        $url = $baseUrl . pq($prop)->attr('href');
+        $title = trim(pq($prop)->text());
+        $subtitle = 'property:' . $title;
+        $type = 'property';
+        $data[] = compact('url', 'title', 'subtitle', 'type');
     }
+
+    // css selectors
+    echo 'Parse css selector', PHP_EOL;
+    $items = pq('#Selectors')->next('ul');
+    $items = pq($items)->find('li');
+    foreach ($items as $item) {
+        $url = $baseUrl . pq($item)->find('a')->attr('href');
+        $title = trim(pq($item)->find('a')->text());
+        $subtitle = $title;
+        $type = 'section';
+        $data[] = compact('url', 'title', 'subtitle', 'type');
+    }
+
+    // css tutorials
+    echo 'Parse css tutorial', PHP_EOL;
+    $items = pq('#CSS3_Tutorials')->next('p')->next('ul');
+    $items = pq($items)->find('a');
+    foreach ($items as $item) {
+        $url = $baseUrl . pq($item)->attr('href');
+        $title = trim(pq($item)->text());
+        $subtitle = 'tutorial: ' . $title;
+        $type = 'section';
+        $data[] = compact('url', 'title', 'subtitle', 'type');
+    }
+
+    // css concepts
+    echo 'Parse css concepts', PHP_EOL;
+    $items = pq('#Concepts')->next('ul');
+    $items = pq($items)->find('a');
+    foreach ($items as $item) {
+        $url = $baseUrl . pq($item)->attr('href');
+        $title = trim(pq($item)->text());
+        $subtitle = 'concept: ' . $title;
+        $type = 'define';
+        $data[] = compact('url', 'title', 'subtitle', 'type');
+    }
+
     file_put_contents($dataFile, sprintf("<?php\n return %s;", var_export($data, true)));
     echo 'Get ', count($data), ' items', PHP_EOL;
 }
@@ -48,11 +88,10 @@ if (!file_exists($dataFile)) {
 // search for user query
 $items = require($dataFile);
 
-print_r($items); exit();
-
 foreach ($items as $item) {
     extract($item);
-    if (strpos($title, $query) !== false) {
+    if (stripos($title, $query) !== false) {
+        $icon = sprintf('./icons/%s.png', $type);
         $wf->result("$url", "$title", "$subtitle", $icon);
     }
 }
