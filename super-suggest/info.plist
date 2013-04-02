@@ -236,33 +236,6 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>sugamz</string>
-				<key>runningsubtext</key>
-				<string>Retrieving search suggestions ...</string>
-				<key>script</key>
-				<string>php amazon.php '{query}'</string>
-				<key>subtext</key>
-				<string>Search Amazon with Suggestions</string>
-				<key>title</key>
-				<string>Search Amazon</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>2558AB62-161A-453C-BB59-40619C85E8DB</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
 				<string>sugzh</string>
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
@@ -281,6 +254,33 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>BCC41292-4B26-4C89-A63B-FB47EB21F0D8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugamz</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php amazon.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Amazon with Suggestions</string>
+				<key>title</key>
+				<string>Search Amazon</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2558AB62-161A-453C-BB59-40619C85E8DB</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -388,6 +388,6 @@
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>wangshijun2010@gmail.com</string>
+	<string>https://github.com/wangshijun2010/alfred-workflows</string>
 </dict>
 </plist>
