@@ -35,7 +35,8 @@ foreach($items as $item) {
 
 $results = $wf->results();
 if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 百度地图 for '.$query, $icon);
+    $url = sprintf('http://maps.baidu.com/?newmap=1&s=s%%26wd%%3D%s%%26c%%3D1', urlencode($query));
+    $wf->result($url, 'No Suggestions', 'No search suggestions found. Search 百度地图 for '.$query, $icon);
 endif;
 
 echo $wf->toxml();

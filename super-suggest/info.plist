@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>D1472985-5E37-4048-B3F4-88C926E63B6D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>37093FFC-3847-47A3-84EF-BE58E5A11267</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -32,7 +32,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -43,7 +43,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -54,7 +54,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -65,7 +65,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -76,7 +76,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,7 +87,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -108,29 +108,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
-				<string>sugmap</string>
-				<key>runningsubtext</key>
-				<string>Retrieving search suggestions ...</string>
-				<key>script</key>
-				<string>php baidu_map.php '{query}'</string>
-				<key>subtext</key>
-				<string>Search 百度地图 with Suggestions</string>
-				<key>title</key>
-				<string>Search 百度地图</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</string>
+			<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -162,71 +150,24 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
-				<string>suggg</string>
-				<key>runningsubtext</key>
-				<string>Retrieving search suggestions ...</string>
-				<key>script</key>
-				<string>php google.php '{query}'</string>
-				<key>subtext</key>
-				<string>Search Google with Suggestions</string>
-				<key>title</key>
-				<string>Search Google</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
+				<key>searcher</key>
+				<integer>1635215215</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.systemwebsearch</string>
 			<key>uid</key>
-			<string>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</string>
+			<string>D1472985-5E37-4048-B3F4-88C926E63B6D</string>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string>open "$(echo '{query}' | cut -d '|' -f 1 )"</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>searcher</key>
+				<integer>1635213677</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.systemwebsearch</string>
 			<key>uid</key>
-			<string>56AC1B07-592D-4D51-BB77-99CC54195570</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
-				<string>sugjd</string>
-				<key>runningsubtext</key>
-				<string>Retrieving search suggestions ...</string>
-				<key>script</key>
-				<string>php jingdong.php '{query}'</string>
-				<key>subtext</key>
-				<string>Search 京东商城 with Suggestions</string>
-				<key>title</key>
-				<string>Search 京东商城</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>769951D2-209E-4EF1-8665-6025558F8EDE</string>
+			<string>37093FFC-3847-47A3-84EF-BE58E5A11267</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -254,6 +195,60 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>BCC41292-4B26-4C89-A63B-FB47EB21F0D8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugwiki</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php wikipedia.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Wikipedia with Suggestions</string>
+				<key>title</key>
+				<string>Search Wikipedia</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DEF530A1-7787-47C3-8E18-0123C9550184</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sugjd</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php jingdong.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search 京东商城 with Suggestions</string>
+				<key>title</key>
+				<string>Search 京东商城</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>769951D2-209E-4EF1-8665-6025558F8EDE</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -317,15 +312,15 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>sugwiki</string>
+				<string>sugmap</string>
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php wikipedia.php '{query}'</string>
+				<string>php baidu_map.php '{query}'</string>
 				<key>subtext</key>
-				<string>Search Wikipedia with Suggestions</string>
+				<string>Search 百度地图 with Suggestions</string>
 				<key>title</key>
-				<string>Search Wikipedia</string>
+				<string>Search 百度地图</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -334,7 +329,34 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>DEF530A1-7787-47C3-8E18-0123C9550184</string>
+			<string>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>suggg</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php google.php '{query}'</string>
+				<key>subtext</key>
+				<string>Search Google with Suggestions</string>
+				<key>title</key>
+				<string>Search Google</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</string>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -344,22 +366,27 @@
 		<key>1BF8E751-B99A-4F82-AF60-0C67BB0EDB88</key>
 		<dict>
 			<key>ypos</key>
-			<real>530</real>
+			<real>780</real>
 		</dict>
 		<key>2558AB62-161A-453C-BB59-40619C85E8DB</key>
 		<dict>
 			<key>ypos</key>
-			<real>650</real>
+			<real>900</real>
+		</dict>
+		<key>37093FFC-3847-47A3-84EF-BE58E5A11267</key>
+		<dict>
+			<key>ypos</key>
+			<real>900</real>
 		</dict>
 		<key>4B45080B-A891-42BB-815F-4ECEFA99B859</key>
 		<dict>
 			<key>ypos</key>
 			<real>280</real>
 		</dict>
-		<key>56AC1B07-592D-4D51-BB77-99CC54195570</key>
+		<key>542799C0-49B9-407B-9211-6ECE649308C2</key>
 		<dict>
 			<key>ypos</key>
-			<real>370</real>
+			<real>350</real>
 		</dict>
 		<key>769951D2-209E-4EF1-8665-6025558F8EDE</key>
 		<dict>
@@ -379,12 +406,17 @@
 		<key>C7A207E9-8479-4D05-BA61-25125F486108</key>
 		<dict>
 			<key>ypos</key>
-			<real>900</real>
+			<real>660</real>
+		</dict>
+		<key>D1472985-5E37-4048-B3F4-88C926E63B6D</key>
+		<dict>
+			<key>ypos</key>
+			<real>780</real>
 		</dict>
 		<key>DEF530A1-7787-47C3-8E18-0123C9550184</key>
 		<dict>
 			<key>ypos</key>
-			<real>780</real>
+			<real>540</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

@@ -30,9 +30,4 @@ $subtitle = sprintf('查看与%s有关的所有结果', $query);
 $url = sprintf('http://en.wikipedia.org/w/index.php?search=%s&fulltext=1', $query);
 $wf->result("$url", "$title", "$subtitle", $icon);
 
-$results = $wf->results();
-if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search Wikipedia for '.$query, $icon);
-endif;
-
 echo $wf->toxml();

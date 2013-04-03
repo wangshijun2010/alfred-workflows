@@ -45,7 +45,8 @@ foreach($items as $item) {
 
 $results = $wf->results();
 if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 知乎 for '.$query, 'icon.png');
+    $url = sprintf('http://www.zhihu.com/search?q=%s&type=question', $query);
+    $wf->result($url, 'No Suggestions', 'No search suggestions found. Search 知乎 for '.$query, 'icon.png');
 endif;
 
 echo $wf->toxml();

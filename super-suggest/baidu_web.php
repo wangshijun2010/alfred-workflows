@@ -26,7 +26,8 @@ foreach($items as $item) {
 
 $results = $wf->results();
 if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 百度 for '.$query, $icon);
+    $url = sprintf('http://www.baidu.com/s?wd=%s&&ie=utf-8', urlencode($query));
+    $wf->result($url, 'No Suggestions', 'No search suggestions found. Search 百度 for '.$query, $icon);
 endif;
 
 echo $wf->toxml();

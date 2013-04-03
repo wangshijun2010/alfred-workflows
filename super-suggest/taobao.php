@@ -25,7 +25,8 @@ foreach($items as $item) {
 
 $results = $wf->results();
 if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 淘宝 for '.$query, $icon);
+    $url = sprintf('http://s.taobao.com/search?q=%s', $query);
+    $wf->result($url, 'No Suggestions', 'No search suggestions found. Search 淘宝 for '.$query, $icon);
 endif;
 
 echo $wf->toxml();

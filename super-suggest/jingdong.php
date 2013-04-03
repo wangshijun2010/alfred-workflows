@@ -36,7 +36,8 @@ foreach($items as $item) {
 
 $results = $wf->results();
 if (count($results) == 0):
-    $wf->result($query, 'No Suggestions', 'No search suggestions found. Search 京东商城 for '.$query, $icon);
+    $url = sprintf('http://search.jd.com/Search?keyword=%s&enc=utf-8&suggest=0&area=1', $query);
+    $wf->result($url, 'No Suggestions', 'No search suggestions found. Search 京东商城 for '.$query, $icon);
 endif;
 
 echo $wf->toxml();
