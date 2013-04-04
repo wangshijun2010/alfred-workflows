@@ -58,11 +58,11 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>ds php</string>
+				<string>dsphp</string>
 				<key>runningsubtext</key>
 				<string>Please wait ...</string>
 				<key>script</key>
-				<string>php php.php '{query}'</string>
+				<string>php search.php 'php:{query}'</string>
 				<key>subtext</key>
 				<string>Search PHP Docs with Suggestions</string>
 				<key>title</key>
@@ -100,11 +100,11 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>ds jq</string>
+				<string>dsjq</string>
 				<key>runningsubtext</key>
 				<string>Please wait ...</string>
 				<key>script</key>
-				<string>php jquery.php '{query}'</string>
+				<string>php search.php 'jquery:{query}'</string>
 				<key>subtext</key>
 				<string>Search jQuery Docs with Suggestions</string>
 				<key>title</key>
@@ -127,11 +127,11 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>ds css</string>
+				<string>dscss</string>
 				<key>runningsubtext</key>
 				<string>Please wait ...</string>
 				<key>script</key>
-				<string>php css.php '{query}'</string>
+				<string>php search.php 'css:{query}'</string>
 				<key>subtext</key>
 				<string>Search CSS Docs with Suggestions</string>
 				<key>title</key>
