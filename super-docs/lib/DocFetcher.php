@@ -9,7 +9,7 @@ class DocFetcher {
      * @param $options - Array of curl options
      * @return result from curl_exec
      */
-    public static function get($url=null, $options=null) {
+    public static function get($url = null, $options = null) {
         if (is_null($url)) {
             return false;
         }
@@ -22,8 +22,11 @@ class DocFetcher {
             CURLOPT_USERAGENT => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31',
         );
 
+        // caution: donot use array_merge
         if ($options) {
-            $defaults = array_merge($defaults, $options);
+            foreach ($options as $key=>$value) {
+                $defaults[$key] = $value;
+            }
         }
 
         array_filter($defaults);

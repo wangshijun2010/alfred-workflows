@@ -4,7 +4,11 @@ class DocSearcher {
 
     public $name = null;
 
-    public $fallback = 'http://www.baidu.com/s?wd=%s';
+    public $defaultFallbacks = array(
+        'baidu' => 'http://www.baidu.com/s?wd=%s',
+        'google' => 'https://www.google.com/search?q=%s',
+        'stackoverflow' => 'http://stackoverflow.com/search?q=%s',
+    );
 
     /**
      * Search the offline index for similar entries
@@ -22,20 +26,30 @@ class DocSearcher {
 
             foreach ($data as $key=>$entry) {
                 $entry['icon'] = ICON . $entry['type'] . '.png';
-                $pos = stripos($entry['title'], $query);
-                if ($pos === 0) {
+                // 标题完全匹配的权重最大
+                if (strtolower($entry['title']) === $query) {
+                    $entry['weight'] = $entry['weight'] * 9999;
                     $items[] = $entry;
-                } else if ($pos > 0) {
-                    $entry['weight'] = $entry['weight'] * 0.5;
-                    $items[] = $entry;
-                } else if (stripos($entry['subtitle'], $query) > 0) {
-                    $entry['weight'] = $entry['weight'] * 0.1;
-                    $items[] = $entry;
+                } else {
+                    $pos = stripos($entry['title'], $query);
+                    // 标题开头匹配权重次之
+                    if ($pos === 0) {
+                        $entry['weight'] = $entry['weight'] * 10 / strlen($entry['title']);
+                        $items[] = $entry;
+                    // 标题后面匹配权重次之
+                    } else if ($pos > 0) {
+                        $entry['weight'] = $entry['weight'] * 1 / strlen($entry['title']);
+                        $items[] = $entry;
+                    // 副标题匹配权重最次
+                    } else if ($entry['subtitle'] && stripos($entry['subtitle'], $query) > 0) {
+                        $entry['weight'] = $entry['weight'] * 0.02;
+                        $items[] = $entry;
+                    }
                 }
             }
         }
 
-        $fallbacks = $this->fallback($query, sizeof($items));
+        $fallbacks = $this->getFallbacks($query, sizeof($items));
         $items = array_merge($items, $fallbacks);
         usort($items, array($this, 'compareByWeight'));
 
@@ -68,16 +82,22 @@ class DocSearcher {
      * @param string $query
      * @return array
      */
-    protected function fallback($query, $hitDocCount = 0) {
+    protected function getFallbacks($query, $hitDocCount = 0) {
         $items = array();
-        $weight = 0;
-        $fallbacks = (array)$this->fallback;
+        $fallbacks = (array)$this->fallbacks;
+        $fallbacks = array_merge($fallbacks, $this->defaultFallbacks);
 
-        foreach ($fallbacks as $fallback) {
-            $url = sprintf($fallback, urlencode($query));
-            $title = $hitDocCount ? 'Want more?' : 'No Suggestions';
-            $subtitle = sprintf('Search %s for %s', parse_url($fallback, PHP_URL_HOST), $query);
-            $icon = ICON . $this->name . '.png';
+        foreach ($fallbacks as $key=>$fallback) {
+            if (array_key_exists($key, $this->defaultFallbacks)) {
+                $url = sprintf($fallback, urlencode($this->name . ' ' . $query));
+                $weight = 0;
+            } else {
+                $url = sprintf($fallback, urlencode($query));
+                $weight = 1;
+            }
+            $title = sprintf('Search %s for \'%s\'', parse_url($fallback, PHP_URL_HOST), $query);
+            $subtitle = '';
+            $icon = ICON . $key . '.png';
             if (!file_exists($icon)) {
                 $icon = 'icon.png';
             }

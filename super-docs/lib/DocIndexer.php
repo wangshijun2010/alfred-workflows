@@ -19,12 +19,37 @@ class DocIndexer {
      */
     public function index() {
         $data = array();
+        $defaultConfig = array(
+            'type' => 'html',
+            'proxy' => false,
+            'post' => false,
+        );
         foreach ($this->config as $key=>$config) {
+            $config = array_merge($defaultConfig, $config);
+            $options = array();
+
             extract($config);
-            $content = DocFetcher::get($url);
+
+            // proxy settings
+            if ($proxy) {
+                $options[CURLOPT_PROXY] = $proxy;
+            }
+
+            // post settings
+            if ($post) {
+                $options[CURLOPT_POST] = true;
+                $options[CURLOPT_POSTFIELDS] = $post;
+            }
+
+            $content = DocFetcher::get($url, $options);
+
+            // If datatype is html, create phpQuery document
+            if ($type === 'html') {
+                phpQuery::newDocument($content);
+            }
+
             $parser = array($this, $key . 'Parser');
-            phpQuery::newDocument($content);
-            $tmpdata = call_user_func($parser, $base, $url, $weight);
+            $tmpdata = call_user_func($parser, $base, $url, $weight, $content);
             $data = array_merge($data, $tmpdata);
         }
 

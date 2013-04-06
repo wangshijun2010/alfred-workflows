@@ -1,8 +1,8 @@
 <?php
 
-class CssDocSearcher extends DocSearcher {
+class JsDocSearcher extends DocSearcher {
 
-    public $name = 'css';
+    public $name = 'js';
 
     public $fallbacks = array(
         'mdn' => 'https://developer.mozilla.org/en-US/search?q=%s',
