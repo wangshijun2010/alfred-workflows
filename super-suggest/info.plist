@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D1472985-5E37-4048-B3F4-88C926E63B6D</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,18 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>37093FFC-3847-47A3-84EF-BE58E5A11267</string>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>41541729-0B20-43D4-B8F3-F11302F3523E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -40,6 +51,17 @@
 			</dict>
 		</array>
 		<key>769951D2-209E-4EF1-8665-6025558F8EDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>94E9ED8D-D1D2-446E-9CD8-D75EF785AF9F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -84,6 +106,17 @@
 			</dict>
 		</array>
 		<key>DEF530A1-7787-47C3-8E18-0123C9550184</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>542799C0-49B9-407B-9211-6ECE649308C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EA079155-D07E-422E-B613-D9BDB45908E5</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -132,7 +165,7 @@
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php taobao.php '{query}'</string>
+				<string>php suggest.php 'taobao:{query}'</string>
 				<key>subtext</key>
 				<string>Search 淘宝 with Suggestions</string>
 				<key>title</key>
@@ -150,24 +183,56 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>searcher</key>
-				<integer>1635215215</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dbmovie</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php suggest.php 'doubanmovie:{query}'</string>
+				<key>subtext</key>
+				<string>Search 豆瓣电影 with Suggestions</string>
+				<key>title</key>
+				<string>Search 豆瓣电影</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.systemwebsearch</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>D1472985-5E37-4048-B3F4-88C926E63B6D</string>
+			<string>EA079155-D07E-422E-B613-D9BDB45908E5</string>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>searcher</key>
-				<integer>1635213677</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dbbook</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php suggest.php 'doubanbook:{query}'</string>
+				<key>subtext</key>
+				<string>Search 豆瓣读书 with Suggestions</string>
+				<key>title</key>
+				<string>Search 豆瓣读书</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.systemwebsearch</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>37093FFC-3847-47A3-84EF-BE58E5A11267</string>
+			<string>41541729-0B20-43D4-B8F3-F11302F3523E</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -181,7 +246,7 @@
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php zhihu.php '{query}'</string>
+				<string>php suggest.php 'zhihu:{query}'</string>
 				<key>subtext</key>
 				<string>Search 知乎 with Suggestions</string>
 				<key>title</key>
@@ -204,11 +269,38 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
+				<string>dbmusic</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php suggest.php 'doubanmusic:{query}'</string>
+				<key>subtext</key>
+				<string>Search 豆瓣读书 with Suggestions</string>
+				<key>title</key>
+				<string>Search 豆瓣读书</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>94E9ED8D-D1D2-446E-9CD8-D75EF785AF9F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
 				<string>sugwiki</string>
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php wikipedia.php '{query}'</string>
+				<string>php suggest.php 'wikipedia:{query}'</string>
 				<key>subtext</key>
 				<string>Search Wikipedia with Suggestions</string>
 				<key>title</key>
@@ -235,7 +327,7 @@
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php jingdong.php '{query}'</string>
+				<string>php suggest.php 'jingdong:{query}'</string>
 				<key>subtext</key>
 				<string>Search 京东商城 with Suggestions</string>
 				<key>title</key>
@@ -258,38 +350,11 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>sugamz</string>
-				<key>runningsubtext</key>
-				<string>Retrieving search suggestions ...</string>
-				<key>script</key>
-				<string>php amazon.php '{query}'</string>
-				<key>subtext</key>
-				<string>Search Amazon with Suggestions</string>
-				<key>title</key>
-				<string>Search Amazon</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>2558AB62-161A-453C-BB59-40619C85E8DB</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
 				<string>sugbd</string>
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php baidu_web.php '{query}'</string>
+				<string>php suggest.php 'baidu:{query}'</string>
 				<key>subtext</key>
 				<string>Search 百度 with Suggestions</string>
 				<key>title</key>
@@ -312,11 +377,38 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
+				<string>sugamz</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>php suggest.php 'amazon:{query}'</string>
+				<key>subtext</key>
+				<string>Search Amazon with Suggestions</string>
+				<key>title</key>
+				<string>Search Amazon</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2558AB62-161A-453C-BB59-40619C85E8DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
 				<string>sugmap</string>
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php baidu_map.php '{query}'</string>
+				<string>php suggest.php 'baidumap:{query}'</string>
 				<key>subtext</key>
 				<string>Search 百度地图 with Suggestions</string>
 				<key>title</key>
@@ -343,7 +435,7 @@
 				<key>runningsubtext</key>
 				<string>Retrieving search suggestions ...</string>
 				<key>script</key>
-				<string>php google.php '{query}'</string>
+				<string>php suggest.php 'google:{query}'</string>
 				<key>subtext</key>
 				<string>Search Google with Suggestions</string>
 				<key>title</key>
@@ -373,10 +465,10 @@
 			<key>ypos</key>
 			<real>900</real>
 		</dict>
-		<key>37093FFC-3847-47A3-84EF-BE58E5A11267</key>
+		<key>41541729-0B20-43D4-B8F3-F11302F3523E</key>
 		<dict>
 			<key>ypos</key>
-			<real>900</real>
+			<real>1020</real>
 		</dict>
 		<key>4B45080B-A891-42BB-815F-4ECEFA99B859</key>
 		<dict>
@@ -386,12 +478,17 @@
 		<key>542799C0-49B9-407B-9211-6ECE649308C2</key>
 		<dict>
 			<key>ypos</key>
-			<real>350</real>
+			<real>700</real>
 		</dict>
 		<key>769951D2-209E-4EF1-8665-6025558F8EDE</key>
 		<dict>
 			<key>ypos</key>
 			<real>150</real>
+		</dict>
+		<key>94E9ED8D-D1D2-446E-9CD8-D75EF785AF9F</key>
+		<dict>
+			<key>ypos</key>
+			<real>1140</real>
 		</dict>
 		<key>A07BF7E2-9CC8-46D7-B21F-1823057D9C4D</key>
 		<dict>
@@ -408,15 +505,15 @@
 			<key>ypos</key>
 			<real>660</real>
 		</dict>
-		<key>D1472985-5E37-4048-B3F4-88C926E63B6D</key>
-		<dict>
-			<key>ypos</key>
-			<real>780</real>
-		</dict>
 		<key>DEF530A1-7787-47C3-8E18-0123C9550184</key>
 		<dict>
 			<key>ypos</key>
 			<real>540</real>
+		</dict>
+		<key>EA079155-D07E-422E-B613-D9BDB45908E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>1260</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
